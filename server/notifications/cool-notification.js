@@ -6,3 +6,5 @@ exports.coolNotification = {
   image: 'src/assets/img/wallpaper.jpg',
   sound: 'src/sound/notification.mp3'
 };
+
+// Exemplo com opções visuais e sonoras

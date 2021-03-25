@@ -8,3 +8,5 @@ exports.simpleNotification = {
     primaryKey: 1
   }
 };
+
+// Exemplo simples que é encontrado na internet

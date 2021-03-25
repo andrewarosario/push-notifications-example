@@ -12,3 +12,5 @@ exports.replyNotification = {
     }
   ]
 };
+
+// Exemplo de resposta diretamente na notificação

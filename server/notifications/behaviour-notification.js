@@ -6,3 +6,5 @@ exports.behaviourNotification = {
   renotify: true,
   timestamp: Date.parse('01 Jan 2022 00:00:00')
 };
+
+// Exemplo com opções comportamentais
