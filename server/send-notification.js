@@ -1,14 +1,14 @@
 const webpush = require('web-push');
-const { simpleNotification } = require('./notifications/simple-notification');
+const { actionNotification } = require('./notifications/action-notification');
 const { subscriptions } = require("./db/subscriptions");
 
 exports.sendNotification = async (req, res) => {
 
-  const notificationPayload = simpleNotification;
+  const notificationPayload = { notification: actionNotification };
 
   // console.log(webpush.generateVAPIDKeys());
   const vapidDetails = {
-    subject: 'seu-email@mail.com',
+    subject: 'mailto:seu-email@mail.com',
     publicKey: 'BBl5Vw0PCEM8nbonAjahMaBPAR3MEibrU-zwkXHd0vp_bL4w43ej_K41pLBWOIjCW_3TnotZvskdY_Xmg0Hde3I',
     privateKey: 'QHznI0Lrhm5c8ByTsuNyuJKZamqo7qSXwuyBfSD7sIs'
   }
@@ -17,7 +17,7 @@ exports.sendNotification = async (req, res) => {
     await webpush.sendNotification(
       subscription,
       JSON.stringify(notificationPayload),
-      vapidDetails
+      { vapidDetails }
     );
   }
 
